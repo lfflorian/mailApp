@@ -1,0 +1,11 @@
+<div ng-controller="destController">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" ng-model="Nombre" id="Nombre" placeholder="Ingresa tu nombre">
+    </div>
+    <div class="form-group">
+        <label for="Correo">Correo</label>
+        <input type="email" class="form-control" ng-model="Correo" id="Correo" aria-describedby="emailHelp" placeholder="Entra tu correo electronico">
+    </div>
+    <input type="button" class="btn btn-primary" ng-click="GuardarDestinatario()" value="Guardar Correo"></input>
+</div>
