@@ -1,4 +1,5 @@
 <div ng-controller="destController">
+    <h2>Agrega un destinatario</h2>
     <div class="form-group">
         <label for="Nombre">Nombre</label>
         <input type="text" class="form-control" ng-model="Nombre" id="Nombre" placeholder="Ingresa tu nombre">
@@ -6,6 +7,12 @@
     <div class="form-group">
         <label for="Correo">Correo</label>
         <input type="email" class="form-control" ng-model="Correo" id="Correo" aria-describedby="emailHelp" placeholder="Entra tu correo electronico">
+    </div>
+    <div ng-model="mostrarResultado" ng-init="mostrarResultado = false">
+        <resultado ng-if="mostrarResultado"></resultado>
+    </div>
+    <div ng-model="mostrarLoading" ng-init="mostrarLoading = false">
+        <loading ng-if="mostrarLoading"></loading>
     </div>
     <input type="button" class="btn btn-primary" ng-click="GuardarDestinatario()" value="Guardar Correo"></input>
 </div>

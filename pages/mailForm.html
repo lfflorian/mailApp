@@ -1,4 +1,25 @@
 <div>
-    <h1>OLA</h1>
-    {{ var }}
+    <h2>Envia un mensaje</h2>
+    <div class="form-group destinatarios">
+        <label for="destinatarios">Selecciona a tu destinatario</label>
+        <select class="form-control" id="destinatarios" ng-model="seleccion">
+          <option ng-repeat="destinatario in destinatarios" value="{{ destinatario.correo}}" >{{ destinatario.nombre }}</option>
+        </select>
+        <p>{{ seleccion }}</p>
+    </div>
+    <div class="form-group">
+        <label for="Asunto">Asunto</label>
+        <input type="text" class="form-control" ng-model="asunto" id="Asunto" placeholder="Asunto">
+    </div>
+    <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea ng-model="mensaje" class="form-control" id="mensaje" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div ng-model="mostrarResultado" ng-init="mostrarResultado = false">
+        <resultado ng-if="mostrarResultado"></resultado>
+    </div>
+    <div ng-model="mostrarLoading" ng-init="mostrarLoading = false">
+        <loading ng-if="mostrarLoading"></loading>
+    </div>
+    <input type="button" class="btn btn-primary" ng-click="EnviarCorreo()" value="Enviar correo"></input>
 </div>
