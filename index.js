@@ -1,9 +1,16 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express')
+var app = express();
+var path = require('path');
 
-var html = fs.readFileSync('index.html');
+app.use(express.static('js'))
+app.use(express.static('css'))
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(html);
-}).listen(3031);
+app.use('/js', express.static(path.join(__dirname, 'js')))
+app.use('/css', express.static(path.join(__dirname, 'css')))
+app.use('/pages', express.static(path.join(__dirname, 'pages')))
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'))
+})
+
+app.listen(3031);
