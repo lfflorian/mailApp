@@ -1,5 +1,5 @@
 var app = angular.module('App', ['ngRoute']);
-var rutaApi = 'http://localhost:3030/api/';
+var rutaApi = 'https://mailds.herokuapp.com/api/';
 var ubicacion = null;
 
 //Rutas

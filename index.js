@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express();
 var path = require('path');
+const config = require('./config')
 
 app.use(express.static('js'))
 app.use(express.static('css'))
@@ -13,4 +14,4 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
 })
 
-app.listen(3031);
+app.listen(config.port);
